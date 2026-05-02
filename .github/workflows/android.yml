@@ -28,10 +28,20 @@ jobs:
 
       - name: Run unit tests
         continue-on-error: true
-        run: gradle :app:testDebugUnitTest --stacktrace 2>&1 | tee test.log
+        run: |
+          gradle :app:testDebugUnitTest --stacktrace 2>&1 | tee test.log
+          exit ${PIPESTATUS[0]}
 
       - name: Build Debug APK
-        run: gradle :app:assembleDebug --stacktrace 2>&1 | tee build.log
+        run: |
+          gradle :app:assembleDebug --stacktrace 2>&1 | tee build.log
+          status=${PIPESTATUS[0]}
+          if [ "$status" -ne 0 ]; then
+            while IFS= read -r line; do
+              echo "::error::$line"
+            done < <(tail -n 80 build.log)
+          fi
+          exit "$status"
 
       - name: Upload CI logs
         if: always()
