@@ -29,8 +29,10 @@ jobs:
       - name: Generate Gradle wrapper
         run: gradle wrapper --gradle-version 8.10.2
 
+      - name: Make Gradle wrapper executable
+        run: chmod +x gradlew
+
       - name: Run unit tests
-        continue-on-error: true
         run: ./gradlew testDebugUnitTest --stacktrace
 
       - name: Build Debug APK
