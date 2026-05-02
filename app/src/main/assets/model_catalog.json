@@ -1,0 +1,54 @@
+[
+  {
+    "id": "gpt-image-1",
+    "label": "GPT Image 1",
+    "provider": "OpenAI",
+    "operations": ["TextToImage", "ImageEdit", "Inpaint"],
+    "defaultSize": "1024x1024",
+    "supportsMask": true
+  },
+  {
+    "id": "dall-e-3",
+    "label": "DALL-E 3",
+    "provider": "OpenAI",
+    "operations": ["TextToImage"],
+    "defaultSize": "1024x1024"
+  },
+  {
+    "id": "fal-ai/flux/dev",
+    "label": "Flux Dev",
+    "provider": "Fal",
+    "operations": ["TextToImage", "ImageEdit"],
+    "defaultSize": "1024x1024"
+  },
+  {
+    "id": "fal-ai/gpt-image-1.5/edit",
+    "label": "GPT Image 1.5 Edit on fal",
+    "provider": "Fal",
+    "operations": ["ImageEdit", "Inpaint"],
+    "defaultSize": "1024x1024",
+    "supportsMask": true
+  },
+  {
+    "id": "fal-ai/realesrgan",
+    "label": "RealESRGAN Upscale",
+    "provider": "Fal",
+    "operations": ["Upscale"],
+    "defaultSize": "1024x1024"
+  },
+  {
+    "id": "black-forest-labs/flux-schnell",
+    "label": "Flux Schnell",
+    "provider": "Replicate",
+    "operations": ["TextToImage"],
+    "defaultSize": "1024x1024"
+  },
+  {
+    "id": "stability-ai/stable-diffusion",
+    "label": "Stable Diffusion",
+    "provider": "Replicate",
+    "operations": ["TextToImage", "ImageEdit"],
+    "defaultSize": "1024x1024"
+  }
+]
+

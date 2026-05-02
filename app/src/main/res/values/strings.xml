@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AI 图像工坊</string>
+    <string name="provider_openai">OpenAI</string>
+    <string name="provider_fal">fal.ai</string>
+    <string name="provider_replicate">Replicate</string>
+</resources>
+
